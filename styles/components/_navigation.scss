@@ -1,0 +1,23 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  border: 2px solid red;
+  width: 100vw;
+  z-index: 1;
+  .navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    &__link{
+      margin-left: 10px;
+    }
+  }
+
+  //display: flex;
+  //justify-content: space-around;
+  //border: 1px solid green;
+  //
+  //bottom: 0;
+  //&__link{
+  //
+  //}
+}

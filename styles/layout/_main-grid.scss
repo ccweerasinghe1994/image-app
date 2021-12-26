@@ -1,0 +1,8 @@
+.card-layout{
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(min-content,40rem));
+  gap: 3rem;
+  justify-content: center;
+  align-content: start;
+}

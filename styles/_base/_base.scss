@@ -1,0 +1,22 @@
+html {
+  /*this defines what 1rem is 1rem = 10px */
+  font-size: 62.5%;
+}
+body {
+  //   padding: 3rem;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// basic reset
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
