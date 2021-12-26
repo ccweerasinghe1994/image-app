@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     padding: 1rem;
-    background-image: radial-gradient(
+    background-image: linear-gradient(
                     to right bottom,
                     rgba($color-primary-light, 0.2),
                     rgba($color-primary-dark, 0.8)
