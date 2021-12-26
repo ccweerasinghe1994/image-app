@@ -1,9 +1,9 @@
 .card-layout{
 
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(min-content,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(min-content,35rem));
   gap: 3rem 0;
-  //justify-content: center;
+  justify-content: center;
   align-content: start;
 
   @include respond(tab-port){
@@ -11,7 +11,7 @@
     justify-content: center;
     gap: 3rem;
   }  @include respond(phone-land){
-    grid-template-columns: repeat(auto-fit,minmax(min-content,30rem));
+    grid-template-columns: repeat(auto-fit,minmax(min-content,38rem));
     justify-content: center;
     gap: 3rem;
   }

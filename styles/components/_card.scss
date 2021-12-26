@@ -1,14 +1,22 @@
 .card {
+
   font-size: 1.6rem;
 
   &__header {
     display: flex;
     align-items: center;
     padding: 1rem;
+    background-image: radial-gradient(
+                    to right bottom,
+                    rgba($color-primary-light, 0.2),
+                    rgba($color-primary-dark, 0.8)
+    );
+    border-radius: 3rem 0;
+    margin-bottom: 1rem;
 
-
-    .image-wrapper{
+    .image-wrapper {
     }
+
     &-image {
       border-radius: 50%;
     }
@@ -22,12 +30,27 @@
     //border: 5px solid red;
     overflow: hidden;
     height: 400px;
+    border-radius: 3rem 0;
 
 
   }
 
   &__footer {
+    margin-top: 1rem;
+
     &-likes {
+      display: flex;
+      justify-content: flex-start;
+
+      &-icon, &-text {
+        margin-left: 1rem;
+      }
+
+      &-text {
+        color: blue;
+        cursor: pointer;
+
+      }
     }
 
     &-text {
