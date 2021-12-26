@@ -1,3 +1,6 @@
 .main{
-  margin-top: 1rem;
+  margin-top: 2rem;
+  @include respond(tab-land ){
+    margin-top: 8rem;
+  }
 }

@@ -2,16 +2,17 @@
 
   font-size: 1.6rem;
   color: $color-gray;
-
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba($color-primary-light, 0.1),
+                  rgba($color-primary-dark, 0.1)
+  );
+  box-shadow: 0 0.1rem 1rem rgba($color: $color-black, $alpha: 0.15);
   &__header {
     display: flex;
     align-items: center;
     padding: 1rem;
-    background-image: linear-gradient(
-                    to right bottom,
-                    rgba($color-primary-light, 0.1),
-                    rgba($color-primary-dark, 0.1)
-    );
+
 
     //margin-bottom: 1rem;
 
@@ -37,29 +38,35 @@
   }
 
   &__footer {
-    margin-top: 1rem;
+
+    padding: 2rem;
 
     &-likes {
       display: flex;
       justify-content: flex-start;
-
-      &-icon, &-text {
-        margin-left: 1rem;
-      }
-
+      margin-bottom: 1rem;
       &-text {
+        margin-left: 1rem;
         color: $color-tertiary-light;
         cursor: pointer;
-
       }
+
+      //&-icon {
+      //
+      //}
     }
 
-    &-text {
-    }
+    //&-text {
+    //}
 
     &-tags {
       color: $color-tertiary-light;
+      margin-bottom: 1rem;
 
+    }
+
+    &-comments {
+      color: $color-gray-light-3;
     }
   }
 }

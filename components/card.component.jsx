@@ -14,7 +14,8 @@ const Card = ({profile_image,small,tags="#test#test#test",description,likes=32,u
         <div className="card__footer">
             <div className="card__footer-likes">
                 <div className="card__footer-likes-icon">
-                    <Image src={"/static/icons/like.svg"} height={20} width={20} alt={"like icons"}/>
+                    <Image className={"card__footer-likes-icon-heart"} src={"/static/icons/like.svg"} height={20} width={20} alt={"like icons"}/>
+
                 </div>
                 <div className="card__footer-likes-text">
                     {likes||null} likes
@@ -22,8 +23,7 @@ const Card = ({profile_image,small,tags="#test#test#test",description,likes=32,u
 
                </div>
             <p className="card__footer-text">
-                {description || " Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n" +
-                    "                Repellat impedit"}
+                {description || " Lorem ipsum dolor sit, amet consectetur adipisicing "}
             </p>
             <div className="card__footer-tags">
                 <a href="#">

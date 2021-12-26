@@ -3,17 +3,48 @@
   bottom: 0;
   background-image: linear-gradient(
                   to right bottom,
-                  rgba($color-primary-light, 0.9),
-                  rgba($color-primary-dark, 0.9)
+                  rgba($color-primary-light, 1),
+                  rgba($color-primary-dark, 1)
   );
   width: 100vw;
   z-index: 1;
+
+  @include respond(tab-land){
+    top: 0;
+    bottom: 92%;
+    box-shadow: 0 0.1rem 1rem rgba($color: $color-black, $alpha: 0.35);
+  }
+
   .navbar-nav {
     padding-top: 1rem;
     display: flex;
     justify-content: space-around;
+    @include respond(tab-land){
+      width: 25%;
+
+      justify-content: space-between;
+    }
     &__link{
       margin-left: 10px;
+
+      &-wrapper{
+        display: flex;
+        align-items: center;
+
+      }
+      &-text{
+        padding-left: 1.5rem;
+        font-size: 1.6rem;
+        display: none;
+        @include respond(tab-land ){
+          display:flex;
+        }
+
+      }
+
+      &-image{
+        filter: brightness(0);
+      }
     }
   }
 
