@@ -5,11 +5,11 @@ import Card from "../components/card.component";
 import NavBar from "../components/nav-bar";
 import {fetchImages} from "../lib/get-images";
 
-export async function getStaticProps(){
+export async function getStaticProps() {
     const data = await fetchImages();
-    return{
-        props:{
-            photos:data
+    return {
+        props: {
+            photos: data
         }
     }
 }
@@ -27,7 +27,7 @@ export default function Home({photos}) {
             <main className="main">
                 <div className="card-layout">
                     {
-                      photos.map(({id,...otherProps})=><Card key={id} {...otherProps}   />)
+                        photos.map ? photos.map(({id, ...otherProps}) => <Card key={id} {...otherProps}   />) : null
                     }
 
                 </div>
