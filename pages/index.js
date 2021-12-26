@@ -27,7 +27,7 @@ export default function Home({photos}) {
             <main className="main">
                 <div className="card-layout">
                     {
-                        photos.map ? photos.map(({id, ...otherProps}) => <Card key={id} {...otherProps}   />) : null
+                        photos.map(({id, ...otherProps}) => <Card key={id} {...otherProps}   />)
                     }
 
                 </div>
