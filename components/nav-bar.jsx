@@ -12,9 +12,9 @@ const NavBar = ()=>(
                 </Link>
             </div>
             <div className="navbar-nav__link">
-                <Link href="/">
+                <Link href="/favourites">
                     <a>
-                        <Image src={"/static/icons/like.svg"} height={32} width={32} alt={"home icon"}/>
+                        <Image src={"/static/icons/like.svg"} height={32} width={32} alt={"favourites icon"}/>
                     </a>
                 </Link>
             </div>
