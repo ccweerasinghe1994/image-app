@@ -1,10 +1,15 @@
 .navbar {
   position: fixed;
   bottom: 0;
-  background-color: orangered;
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba($color-primary-light, 0.9),
+                  rgba($color-primary-dark, 0.9)
+  );
   width: 100vw;
   z-index: 1;
   .navbar-nav {
+    padding-top: 1rem;
     display: flex;
     justify-content: space-around;
     &__link{

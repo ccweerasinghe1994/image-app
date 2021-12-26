@@ -3,8 +3,19 @@ import Image from "next/image";
 import Link from 'next/link';
 import Card from "../components/card.component";
 import NavBar from "../components/nav-bar";
+import {fetchImages} from "../lib/get-images";
 
-export default function Home() {
+export async function getStaticProps(){
+    const data = await fetchImages();
+    return{
+        props:{
+            photos:data
+        }
+    }
+}
+
+export default function Home({photos}) {
+    console.log(photos)
     return (
         <div>
             <Head>
@@ -15,14 +26,10 @@ export default function Home() {
 
             <main className="main">
                 <div className="card-layout">
+                    {
+                      photos.map(({id,...otherProps})=><Card key={id} {...otherProps}   />)
+                    }
 
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
                 </div>
 
             </main>
