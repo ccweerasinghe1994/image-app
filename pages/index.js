@@ -4,33 +4,9 @@ import Link from 'next/link';
 import Card from "../components/card.component";
 import NavBar from "../components/nav-bar";
 import {fetchImages} from "../lib/get-images";
-import {createApi} from "unsplash-js";
 
 export async function getStaticProps() {
-    const unsplash = createApi({
-        accessKey: process.env.UNSPLASH_API_KEY
-    })
-
-    const response_data = await unsplash.photos.getRandom({
-        count: 10
-    });
-    const {response} =  await response_data;
-    const data = response.map(({width,height,color,description,id,urls:{small,regular,full},likes,user:{username,profile_image}})=>{
-        return{
-            id,
-            width,
-            height,
-            color,
-            description,
-            likes,
-            small,
-            regular,
-            full,
-            username,
-            profile_image
-
-        }
-    })
+    const data = await fetchImages();
     return {
         props: {
             photos: data
