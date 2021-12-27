@@ -1,0 +1,6 @@
+.favourites-container{
+
+  @include respond(tab-land){
+    padding-top: 10rem;
+  }
+}

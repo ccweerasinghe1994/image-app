@@ -14,9 +14,9 @@ const Favourites = () => {
     }, []);
 
 
-    console.log(images)
+
     return (
-        <div>
+        <div className={"favourites-container"} >
             <div className="card-layout">
                 {images.length > 0 && images.map(data => (<Card key={data.id} {...data} />))}
             </div>

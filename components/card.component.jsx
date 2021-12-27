@@ -11,7 +11,6 @@ const Card = (props) => {
         description,
         likes = 32,
         username,
-        imageUrl = "https://images.unsplash.com/photo-1640521515233-f1fa3f600e31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
     } = props
     return (
         <div className="card">
