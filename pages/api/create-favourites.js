@@ -3,7 +3,7 @@ import {getMinifiedRecords, table} from "../../lib/airtable";
 const createImageRecord = async (req, res) => {
 
     if (req.method === "POST") {
-        const {id, name, color, likes, small, regular, full, username, profile_image} = req.body;
+        const {id, color, likes, small, regular, full, username, profile_image} = req.body;
 
         try {
             //    find a record;

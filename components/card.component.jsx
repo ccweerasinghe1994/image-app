@@ -1,4 +1,6 @@
 import Image from "next/image";
+import CardHeader from "./card-header.component";
+import CardFooter from "./card-footer.component";
 
 const Card = (props) => {
     const {
@@ -13,13 +15,7 @@ const Card = (props) => {
     } = props
     return (
         <div className="card">
-            <div className="card__header">
-                <div className="image-wrapper">
-                    <Image className="card__header-image" src={profile_image.medium || null} width={40} height={40}
-                           alt={"profile image"}/>
-                </div>
-                <div className="card__header-name"><a>{username || null}</a></div>
-            </div>
+            <CardHeader profile_image={profile_image} username={username}/>
             <div className={"card__image-and-text-container"}>
                 <div className="card__image">
                     <Image src={small || null} width={640} height={960} layout={"responsive"} alt={"card image"}/>
@@ -31,41 +27,17 @@ const Card = (props) => {
                         <div className="card-image-text-price">$34</div>
                     </div>
                     <div className="card-image-text-like-button">
-                        <button onClick={() => handleLike({...props,handleLike:null})}>
+                        <button onClick={() => handleLike({...props, handleLike: null})}>
                             <Image src={'/static/icons/like.svg'} width={32} height={32} alt={"like button"}/>
                         </button>
                     </div>
                 </div>
             </div>
+            <CardFooter description={description} likes={likes} tags={tags}/>
 
-            <div className="card__footer">
-                <div className="card__footer-likes">
-                    <div className="card__footer-likes-icon">
-                        <Image className={"card__footer-likes-icon-heart"} src={"/static/icons/like.svg"} height={20}
-                               width={20} alt={"like icons"}/>
-
-                    </div>
-                    <div className="card__footer-likes-text">
-                        {likes || null} likes
-                    </div>
-
-                </div>
-                <p className="card__footer-text">
-                    {description || " Lorem ipsum dolor sit, amet consectetur adipisicing "}
-                </p>
-                <div className="card__footer-tags">
-                    <a href="#">
-                        {tags || null}
-                    </a>
-                </div>
-                <div className="card__footer-comments">
-                    view 12 comments
-                </div>
-            </div>
         </div>
     )
 }
-
 
 
 export default Card;

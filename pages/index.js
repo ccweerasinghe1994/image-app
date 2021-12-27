@@ -22,7 +22,7 @@ export default function Home({photos}) {
         const profile_image = data.profile_image.small;
 
         try {
-            const response = await fetch("/api/get-favourites",{
+            const response = await fetch("/api/create-favourites",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
@@ -32,13 +32,13 @@ export default function Home({photos}) {
                     profile_image
                 }),
             });
-            console.log(response.json());
+
         }catch (error){
-            console.log("error",error)
+
         }
-        console.log("liked",data)
+
     }
-    console.log(photos)
+
     return (
         <div>
             <Head>
