@@ -1,7 +1,9 @@
-const RemoveFavourite = ()=>{
+const RemoveFavourite = (props)=>{
+    const {handleRemove,id}  = props;
+
     return(
         <>
-        <button>Remove favorite</button>
+        <button onClick={()=>handleRemove(id)} >Remove favorite</button>
         </>
     )
 }

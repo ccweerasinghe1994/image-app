@@ -12,20 +12,22 @@ const deleteFavourite = async (req, res) => {
                 if (findId.length > 0) {
                      const record = getRecordId(findId)[0];
 
-                    await table.destroy(record,  (err, deletedRecord) =>{
+                    const deleteRecord = await table.destroy(record,  (err, deletedRecord) =>{
                         if (err) {
                             console.error("table.destroy error:", err);
                             res.status(500);
                             res.json({message: "something went wrong"});
                             return;
                         }
-                        console.log('Deleted record', deletedRecord);
-                        res.status(200);
-                        return;
 
-
-
+                       return deletedRecord;
                     });
+                    console.log('Deleted record', deleteRecord);
+                    if (deleteRecord===id){
+                        res.status(200);
+                        res.json({message:"image deleted successfully"})
+                        return;
+                    }
                 } else {
                     res.status(404)
                     res.json({message: "image does not exist"});

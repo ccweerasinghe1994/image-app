@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Card from "../components/card-home-page.component";
 import NavBar from "../components/nav-bar";
 import {fetchImages} from "../lib/get-images";
+import {useState} from "react";
 
 
 export async function getStaticProps() {
@@ -17,7 +18,7 @@ export async function getStaticProps() {
 
 export default function Home({photos}) {
 
-
+   
     const handleLikeButton =  async (data)=>{
         console.log(data);
         const profile_image = data.profile_image.small;

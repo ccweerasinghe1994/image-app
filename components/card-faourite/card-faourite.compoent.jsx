@@ -11,12 +11,15 @@ const FavouriteCard = (props)=>{
         description,
         likes = 32,
         username,
-    } = props
+        handleRemove,
+        id
+    } = props;
+
     return(
         <div className={"card"} >
             <CardHeader profile_image={profile_image} username={username}/>
             <CardBody {...props}/>
-            <RemoveFavourite/>
+            <RemoveFavourite handleRemove={handleRemove} id={id}/>
             <CardFooter description={description} likes={likes} tags={tags}/>
         </div>
     )
