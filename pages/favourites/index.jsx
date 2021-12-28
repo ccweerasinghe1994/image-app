@@ -33,7 +33,10 @@ const Favourites = () => {
                     id
                 }),
             });
-
+            const {message} = await response.json();
+            const newImages = images.filter(image=>image.id!==id);
+            setImages(newImages);
+            console.log("response.json()",newImages)
         } catch (error) {
             console.log(error)
         }

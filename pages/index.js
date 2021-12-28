@@ -18,7 +18,7 @@ export async function getStaticProps() {
 
 export default function Home({photos}) {
 
-   
+
     const handleLikeButton =  async (data)=>{
         console.log(data);
         const profile_image = data.profile_image.small;
