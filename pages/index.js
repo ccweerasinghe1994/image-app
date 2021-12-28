@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from 'next/link';
-import Card from "../components/card.component";
+import Card from "../components/card-home-page.component";
 import NavBar from "../components/nav-bar";
 import {fetchImages} from "../lib/get-images";
 
@@ -19,8 +19,8 @@ export default function Home({photos}) {
 
 
     const handleLikeButton =  async (data)=>{
+        console.log(data);
         const profile_image = data.profile_image.small;
-
         try {
             const response = await fetch("/api/create-favourites",{
                 method:"POST",
