@@ -9,6 +9,7 @@ const Favourites = () => {
     const [lording, setLording] = useState(true);
 
 
+
     const router = useRouter();
     useEffect(() => {
         const getImages = async () => {
@@ -23,7 +24,6 @@ const Favourites = () => {
     }, []);
 
     const deleteFavourite = async (id) => {
-        console.log("favourite deleted:", id);
         try {
             const response = await fetch("/api/delete-favourite", {
                 method: "DELETE",
@@ -36,13 +36,12 @@ const Favourites = () => {
             });
             const {message} = await response.json();
             const newImages = images.filter(image => image.id !== id);
-            setImages(newImages);
-            console.log("response.json()", newImages)
+
         } catch (error) {
             console.log(error)
         }
     }
-    console.log("lording", lording)
+
     return (
 
         <div className={"favourites-container"}>

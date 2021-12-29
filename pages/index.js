@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Card from "../components/card-home-page.component";
 import NavBar from "../components/nav-bar";
 import {fetchImages} from "../lib/get-images";
-import {useState} from "react";
+import {useState, useContext, useEffect} from "react";
+import {ACTION_TYPES, StoreContext} from "./_app";
 
 
 export async function getStaticProps() {
@@ -17,28 +18,80 @@ export async function getStaticProps() {
 }
 
 export default function Home({photos}) {
+    const {dispatch, state} = useContext(StoreContext);
+
+    const [likedImages, setLikedImages] = useState([]);
+    const [userImageLiked, SetUserImageLiked] = useState(false);
+    useEffect(
+        () => {
+            dispatch({
+                type: ACTION_TYPES.SET_INITIAL_IMAGES,
+                payload: photos
+            })
+        }, []
+    );
 
 
-    const handleLikeButton =  async (data)=>{
-        console.log(data);
+    const handleLikeButton = async (data) => {
+        // const updatedImages = state.initial_images.map(image => {
+        //     console.log(image.user_liked_image)
+        //     if (image.id === data.id ) {
+        //         console.log(image.user_liked_image)
+        //         return {
+        //             ...image,
+        //             likes: image.likes + 1,
+        //             user_liked_image: 10,
+        //         }
+        //     }
+        //     return image
+        // })
+
+        dispatch({
+            type: ACTION_TYPES.UPDATE_INITIAL_IMAGES,
+            payload: data.id
+        })
+        // dispatch({
+        //     type: ACTION_TYPES.UPDATE_INITIAL_IMAGES_LIKES_COUNT,
+        //     payload: data.id
+        // })
+
+        console.log(state.initial_images)
         const profile_image = data.profile_image.small;
+
+        const sendData = {
+            ...data,
+            profile_image,
+            user_liked_image: true,
+            likes: data.likes + 1
+
+        }
         try {
-            const response = await fetch("/api/create-favourites",{
-                method:"POST",
-                headers:{
-                    "Content-Type":"application/json",
+            const response = await fetch("/api/create-favourites", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
                 },
-                body:JSON.stringify({
-                    ...data,
-                    profile_image
-                }),
+                body: JSON.stringify(sendData),
             });
 
-        }catch (error){
+            const serverResponse = await response.json();
+
+            if (serverResponse[0] !== undefined) {
+                dispatch({
+                    type: ACTION_TYPES.ADD_FAVOURITE_IMAGE,
+                    payload: serverResponse[0]
+                })
+            }
+
+
+        } catch (error) {
 
         }
 
+
     }
+
+    const {initial_images} = state;
 
     return (
         <div>
@@ -51,7 +104,8 @@ export default function Home({photos}) {
             <main className="main">
                 <div className="card-layout">
                     {
-                        photos.map((props) => <Card handleLike={handleLikeButton} key={props.id} {...props}   />)
+                        initial_images.map((props) => <Card handleLike={handleLikeButton}
+                                                            key={props.id} {...props}   />)
                     }
 
                 </div>

@@ -3,7 +3,7 @@ import {getMinifiedRecords, table} from "../../lib/airtable";
 const createImageRecord = async (req, res) => {
 
     if (req.method === "POST") {
-        const {id, color, likes, small, regular, full, username, profile_image,description} = req.body;
+        const {id, color, likes, small, regular, full, username, profile_image,description,user_liked_image} = req.body;
 
         try {
             //    find a record;
@@ -13,14 +13,14 @@ const createImageRecord = async (req, res) => {
                 }).firstPage();
                 if (findRecord.length > 0) {
                     const records = getMinifiedRecords(findRecord)
-                    res.json(records);
+                    res.json({message:"this item already exists"});
                     return;
                 } else {
 
                     const createRecord = await table.create([
                         {
                             "fields": {
-                                id, color, likes, small, regular, full, username, profile_image,description
+                                id, color, likes, small, regular, full, username, profile_image,description,user_liked_image
                             }
                         },
 

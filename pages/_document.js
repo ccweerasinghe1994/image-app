@@ -9,7 +9,6 @@ class MyDocument extends Document {
 
                     <link rel={"preload"} href="fonts/Roboto-Light.ttf" as={"font"} crossOrigin={"anonymos"}></link>
                     <link rel={"preload"} href="fonts/Lato-Thin.ttf" as={"font"} crossOrigin={"anonymos"}></link>
-                    <link rel={"preload"} href="fonts/BebasNeue-Regular.ttf" as={"font"} crossOrigin={"anonymos"}></link>
                     {/*<link rel={"preload"} href="fonts/IBMPlexSans-Regular.ttf" as={"font"} crossOrigin={"anonymos"}></link>*/}
                     {/*<link rel={"preload"} href="fonts/IBMPlexSans-Thin.ttf" as={"font"} crossOrigin={"anonymos"}></link>*/}
                 </Head>

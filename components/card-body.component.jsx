@@ -1,7 +1,8 @@
 import Image from "next/image";
 
 const CardBody = (props) => {
-    const {small, handleLike} = props;
+    const {small, handleLike,user_liked_image} = props;
+    console.log("user_liked_image",user_liked_image)
     return (
         <div className={"card__image-and-text-container"}>
             <div className="card__image">
@@ -15,7 +16,7 @@ const CardBody = (props) => {
                 </div>
                 <div className="card-image-text-like-button">
                     <button onClick={() => handleLike({...props, handleLike: null})}>
-                        <Image src={'/static/icons/like.svg'} width={32} height={32} alt={"like button"}/>
+                        <Image src={user_liked_image?"/static/icons/like.svg":"/static/icons/dont-like.svg"} width={32} height={32} alt={"like button"}/>
                     </button>
                 </div>
             </div>
