@@ -16,4 +16,10 @@
     justify-content: center;
     gap: 3rem;
   }
+
+  .favourite-empty-message{
+    font-size: clamp(2rem,3rem,6rem);
+    color: $color-gray;
+    margin-top: clamp(10vh,30vh,40vh);
+  }
 }

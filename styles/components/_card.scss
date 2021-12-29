@@ -2,11 +2,6 @@
 
   font-size: 1.6rem;
   color: $color-gray;
-  //background-image: linear-gradient(
-  //                to right bottom,
-  //                rgba($color-primary-light, 0.1),
-  //                rgba($color-primary-dark, 0.1)
-  //);
   background-color: $color-white;
   box-shadow: 0 0.1rem 1rem rgba($color: $color-black, $alpha: 0.15);
   &__header {
@@ -26,6 +21,7 @@
 
     &-name {
       padding-left: 2rem;
+      font-weight: bold;
     }
   }
   &-image-text-wrapper{
@@ -100,6 +96,7 @@
         margin-left: 1rem;
         color: $color-tertiary-light;
         cursor: pointer;
+        font-weight: normal;
       }
 
       //&-icon {
@@ -113,11 +110,12 @@
     &-tags {
       color: $color-tertiary-light;
       margin-bottom: 1rem;
-
+      font-weight: normal;
     }
 
     &-comments {
       color: $color-gray-light-3;
+
     }
   }
 }

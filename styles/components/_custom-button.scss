@@ -2,18 +2,18 @@
 
     cursor: pointer;
     font-size: $default-font-size;
-    color: $color-primary;
+    color: $like-button-color;
     display: inline-block;
     text-decoration: none;
     border: none;
-    border-bottom: 0.1rem solid $color-primary;
+    border-bottom: 0.1rem solid $like-button-color;;
     padding: 0.3rem;
     transition: all 0.2s;
     background-color: rgb(255, 255, 255);
 
 
   &:hover {
-    background-color: $color-primary;
+    background-color: $like-button-color;
     color: $color-white;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
     transform: translateY(-0.3rem);

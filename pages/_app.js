@@ -8,7 +8,8 @@ export const ACTION_TYPES = {
     SET_INITIAL_IMAGES: `SET_INITIAL_IMAGES`,
     UPDATE_INITIAL_IMAGES: `UPDATE_INITIAL_IMAGES`,
     UPDATE_INITIAL_IMAGES_LIKES_COUNT: `UPDATE_INITIAL_IMAGES_LIKES_COUNT`,
-    GET_FAVOURITE_IMAGES:`GET_FAVOURITE_IMAGES`
+    GET_FAVOURITE_IMAGES:`GET_FAVOURITE_IMAGES`,
+    REMOVE_FAVOURITE_BUTTON_TEXT:`REMOVE_FAVOURITE_BUTTON_TEXT`
 
 }
 
@@ -50,6 +51,12 @@ const setImageReducer = (state, action) => {
                 favourites: [...state.favourites,]
 
             }
+
+        case ACTION_TYPES.REMOVE_FAVOURITE_BUTTON_TEXT:
+            return {
+                ...state,
+                remove_button_text:action.payload
+            }
         default:
             throw new Error(`Unhandled action type${action.type}`)
     }
@@ -60,7 +67,11 @@ const StoreProvider = ({children}) => {
     const initialState = {
         favourites: [],
         initial_images: [],
-        updated_images: []
+        updated_images: [],
+        remove_button_text:{
+            id:"",
+            text:"Remove favorite"
+        }
     }
     const [state, dispatch] = useReducer(setImageReducer, initialState)
     return (<StoreContext.Provider value={{state, dispatch}}>
