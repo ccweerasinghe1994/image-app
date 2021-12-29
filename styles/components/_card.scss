@@ -2,11 +2,12 @@
 
   font-size: 1.6rem;
   color: $color-gray;
-  background-image: linear-gradient(
-                  to right bottom,
-                  rgba($color-primary-light, 0.1),
-                  rgba($color-primary-dark, 0.1)
-  );
+  //background-image: linear-gradient(
+  //                to right bottom,
+  //                rgba($color-primary-light, 0.1),
+  //                rgba($color-primary-dark, 0.1)
+  //);
+  background-color: $color-white;
   box-shadow: 0 0.1rem 1rem rgba($color: $color-black, $alpha: 0.15);
   &__header {
     display: flex;

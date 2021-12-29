@@ -1,27 +1,26 @@
 .navbar {
   position: fixed;
   bottom: 0;
-  background-image: linear-gradient(
-                  to right bottom,
-                  rgba($color-primary-light, 1),
-                  rgba($color-primary-dark, 1)
-  );
+  background-color:$color-gray-light-2;
   width: 100vw;
   z-index: 1;
 
   @include respond(tab-land){
     top: 0;
-    bottom: 92%;
-    box-shadow: 0 0.1rem 1rem rgba($color: $color-black, $alpha: 0.35);
+    bottom: 94vh;
+    //border-bottom: 1px solid $like-button-color;
+    //box-shadow: 0 0.1rem 1rem rgba($color: $color-black, $alpha: 0.35);
   }
 
   .navbar-nav {
-    padding-top: 1rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-around;
+
     @include respond(tab-land){
       width: 25%;
-
+      align-items: center;
+      padding: 1.5rem;
       justify-content: space-between;
     }
     &__link{
@@ -43,10 +42,10 @@
       }
 
       &-image{
-        filter: brightness(0);
+        //filter: brightness(0);
 
         &:hover,&:active{
-          filter: brightness(20);
+          filter: brightness(10);
         }
       }
     }
