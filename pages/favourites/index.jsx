@@ -8,6 +8,7 @@ const Favourites = () => {
     const [images, setImages] = useState([]);
     const [lording, setLording] = useState(true);
 
+
     const router = useRouter();
     useEffect(() => {
         const getImages = async () => {
@@ -34,9 +35,9 @@ const Favourites = () => {
                 }),
             });
             const {message} = await response.json();
-            const newImages = images.filter(image=>image.id!==id);
+            const newImages = images.filter(image => image.id !== id);
             setImages(newImages);
-            console.log("response.json()",newImages)
+            console.log("response.json()", newImages)
         } catch (error) {
             console.log(error)
         }
@@ -51,7 +52,7 @@ const Favourites = () => {
                     <div className="card-layout">
                         {images.length > 0 && images.map(data => (
                             <FavouriteCard handleRemove={deleteFavourite} key={data.id} {...data} />))}
-                        {/*{images.length > 0 && images.map(data => (<Card key={data.id} {...data} />))}*/}
+
                     </div>
                 )
             }

@@ -1,9 +1,13 @@
-const RemoveFavourite = (props)=>{
-    const {handleRemove,id}  = props;
+import CustomButton from "../button/custom-button.component";
 
-    return(
+
+
+const RemoveFavourite = (props) => {
+    const {handleRemove, id} = props;
+
+    return (
         <>
-        <button onClick={()=>handleRemove(id)} >Remove favorite</button>
+            <CustomButton id={id} handleClick={handleRemove}>Remove favorite</CustomButton>
         </>
     )
 }
