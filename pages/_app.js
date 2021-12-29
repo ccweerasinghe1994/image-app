@@ -8,6 +8,7 @@ export const ACTION_TYPES = {
     SET_INITIAL_IMAGES: `SET_INITIAL_IMAGES`,
     UPDATE_INITIAL_IMAGES: `UPDATE_INITIAL_IMAGES`,
     UPDATE_INITIAL_IMAGES_LIKES_COUNT: `UPDATE_INITIAL_IMAGES_LIKES_COUNT`,
+    GET_FAVOURITE_IMAGES:`GET_FAVOURITE_IMAGES`
 
 }
 
@@ -41,24 +42,13 @@ const setImageReducer = (state, action) => {
                 })
             }
 
-        case ACTION_TYPES.UPDATE_INITIAL_IMAGES_LIKES_COUNT:
+        case ACTION_TYPES.GET_FAVOURITE_IMAGES:
 
             return {
 
                 ...state,
-                initial_images: state.initial_images.map(image => {
-                    if (action.payload === image.id && !image.user_liked_image) {
+                favourites: [...state.favourites,]
 
-
-                        return {
-                            ...image,
-                            likes: image.likes - 1,
-                            user_liked_image: !image.user_liked_image,
-
-                        }
-                    }
-                    return image;
-                })
             }
         default:
             throw new Error(`Unhandled action type${action.type}`)

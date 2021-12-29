@@ -10,7 +10,7 @@ const Favourites = () => {
 
 
 
-    const router = useRouter();
+
     useEffect(() => {
         const getImages = async () => {
             const images_response = await fetch("/api/get-favourite-images");
@@ -36,6 +36,7 @@ const Favourites = () => {
             });
             const {message} = await response.json();
             const newImages = images.filter(image => image.id !== id);
+
 
         } catch (error) {
             console.log(error)
