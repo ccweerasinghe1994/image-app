@@ -1,10 +1,9 @@
-import CardHeader from "../card-header.component";
-import CardFooter from "../card-footer.component";
-import CardBody from "../card-body.component";
-import RemoveFavourite from "../remove-favourite/remove-favourite.component";
-import FavouriteCardBody from "../favoutite-card-body.component";
+import CardHeader from "../card-header/card-header.component";
+import CardFooter from "../card-footer/card-footer.component";
+import RemoveFavorite from "../remove-favorite/remove-favorite.component";
+import FavoriteCardBody from "../fav-card-body/favoutite-card-body.component";
 
-const FavouriteCard = (props)=>{
+const FavoriteCard = (props)=>{
     const {
         handleLike,
         profile_image,
@@ -19,11 +18,11 @@ const FavouriteCard = (props)=>{
     return(
         <div className={"card"} >
             <CardHeader profile_image={profile_image} username={username}/>
-            <FavouriteCardBody {...props}/>
-            <RemoveFavourite handleRemove={handleRemove} id={id}/>
+            <FavoriteCardBody {...props}/>
+            <RemoveFavorite handleRemove={handleRemove} id={id}/>
             <CardFooter description={description} likes={likes} tags={tags}/>
         </div>
     )
 }
 
-export default FavouriteCard;
+export default FavoriteCard;

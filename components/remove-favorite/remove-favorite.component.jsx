@@ -1,10 +1,10 @@
 import CustomButton from "../button/custom-button.component";
 import {useContext} from "react";
-import {StoreContext} from "../../pages/_app";
+import {StoreContext} from "../../store/store-context";
 
 
 
-const RemoveFavourite = (props) => {
+const RemoveFavorite = (props) => {
     const {state} = useContext(StoreContext);
     const {remove_button_text} = state
     const {handleRemove, id} = props;
@@ -16,4 +16,4 @@ const RemoveFavourite = (props) => {
     )
 }
 
-export default RemoveFavourite;
+export default RemoveFavorite;

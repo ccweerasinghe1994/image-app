@@ -1,15 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from 'next/link';
-import Card from "../components/card-home-page.component";
-import NavBar from "../components/nav-bar";
+import Card from "../components/home-page-card/card-home-page.component";
 import {fetchImages} from "../lib/get-images";
-import {useState, useContext, useEffect} from "react";
-import {ACTION_TYPES, StoreContext} from "./_app";
-
+import { useContext, useEffect} from "react";
+import {ACTION_TYPES, StoreContext} from "../store/store-context";
 
 export async function getStaticProps() {
     const data = await fetchImages();
+
     return {
         props: {
             photos: data
@@ -20,8 +17,7 @@ export async function getStaticProps() {
 export default function Home({photos}) {
     const {dispatch, state} = useContext(StoreContext);
 
-    const [likedImages, setLikedImages] = useState([]);
-    const [userImageLiked, SetUserImageLiked] = useState(false);
+
     useEffect(
         () => {
             dispatch({
@@ -33,28 +29,13 @@ export default function Home({photos}) {
 
 
     const handleLikeButton = async (data) => {
-        // const updatedImages = state.initial_images.map(image => {
-        //     console.log(image.user_liked_image)
-        //     if (image.id === data.id ) {
-        //         console.log(image.user_liked_image)
-        //         return {
-        //             ...image,
-        //             likes: image.likes + 1,
-        //             user_liked_image: 10,
-        //         }
-        //     }
-        //     return image
-        // })
+ 
 
         dispatch({
             type: ACTION_TYPES.UPDATE_INITIAL_IMAGES,
             payload: data.id
         })
-        // dispatch({
-        //     type: ACTION_TYPES.UPDATE_INITIAL_IMAGES_LIKES_COUNT,
-        //     payload: data.id
-        // })
-
+ 
         console.log(state.initial_images)
         const profile_image = data.profile_image.small;
 

@@ -1,7 +1,7 @@
-import Image from "next/image";
-import CardHeader from "./card-header.component";
-import CardFooter from "./card-footer.component";
-import CardBody from "./card-body.component";
+
+import CardHeader from "../card-header/card-header.component";
+import CardFooter from "../card-footer/card-footer.component"
+import CardBody from "../card-body/card-body.component";
 
 const Card = (props) => {
     const {

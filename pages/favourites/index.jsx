@@ -1,11 +1,10 @@
-import {useRouter} from 'next/router'
-import {useContext, useEffect, useState} from "react";
-import Card from "../../components/card-home-page.component";
-import FavouriteCard from "../../components/card-faourite/card-faourite.compoent";
-import Loader from "../../components/loader.component";
-import {ACTION_TYPES, StoreContext} from "../_app";
 
-const Favourites = () => {
+import {useContext, useEffect, useState} from "react";
+import FavoriteCard from "../../components/card-faourite/card-faourite.compoent";
+import Loader from "../../components/loader/loader.component";
+import {ACTION_TYPES, StoreContext} from "../../store/store-context";
+
+const Favorites = () => {
     const [images, setImages] = useState([]);
     const [lording, setLording] = useState(true);
     const {dispatch} = useContext(StoreContext);
@@ -22,7 +21,7 @@ const Favourites = () => {
 
     }, []);
 
-    const deleteFavourite = async (id) => {
+    const deleteFavorite = async (id) => {
         try {
             dispatch({
                 type:ACTION_TYPES.REMOVE_FAVOURITE_BUTTON_TEXT,
@@ -62,7 +61,7 @@ const Favourites = () => {
 
                     <div className="card-layout">
                         {images.length > 0 ? images.map(data => (
-                            <FavouriteCard handleRemove={deleteFavourite} key={data.id} {...data} />)):(<h1 className={"favourite-empty-message"} >Your Favourites are empty add some favourites</h1>)
+                            <FavoriteCard handleRemove={deleteFavorite} key={data.id} {...data} />)):(<h1 className={"favourite-empty-message"} >Your Favorites are empty add some favorites</h1>)
 
                         }
 
@@ -75,4 +74,4 @@ const Favourites = () => {
     )
 }
 
-export default Favourites;
+export default Favorites;
