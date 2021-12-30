@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const FavouriteCardBody = (props) => {
-    const {small, user_liked_image} = props;
+    const {small} = props;
 
     return (
         <div className={"card__image-and-text-container"}>

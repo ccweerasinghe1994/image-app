@@ -5,7 +5,7 @@ import FavoriteCardBody from "../fav-card-body/favoutite-card-body.component";
 
 const FavoriteCard = (props)=>{
     const {
-        handleLike,
+        
         profile_image,
         tags = "#test#test#test",
         description,

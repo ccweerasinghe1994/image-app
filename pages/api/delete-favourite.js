@@ -12,7 +12,7 @@ const deleteFavourite = async (req, res) => {
             console.error(err);
             return;
         }
-        console.log('Deleted', deletedRecord, 'records');
+    
         res.status(300);
         res.json( {id:deletedRecord.id})
     });

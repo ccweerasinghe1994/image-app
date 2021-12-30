@@ -12,7 +12,7 @@ const createImageRecord = async (req, res) => {
                     filterByFormula: `id="${id}"`
                 }).firstPage();
                 if (findRecord.length > 0) {
-                    const records = getMinifiedRecords(findRecord)
+                    const records = getMinifiedRecords(findRecord);
                     res.json({message:"this item already exists"});
                     return;
                 } else {
@@ -26,8 +26,7 @@ const createImageRecord = async (req, res) => {
 
                     ])
                     const records = getMinifiedRecords(createRecord);
-                    res.json(records)
-                    res.json({message: "created a record", records});
+                    res.json(records);
                     return;
 
 
@@ -39,7 +38,7 @@ const createImageRecord = async (req, res) => {
         } catch (error) {
 
             res.status(500);
-            res.json({message: "Error creating or finding a favourite", error});
+            res.json({message: "Error creating or finding a favorite", error});
             return;
         }
 
