@@ -3,7 +3,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-
+[live link](https://image-app-ten.vercel.app/)
 ### how to run it locally
 
 1. clone the repo to your local machine
