@@ -25,28 +25,28 @@ yarn dev
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# component architecture
+# Component Architecture
 
 here is a overall folder and file structure for the application
 ![overall component architecture](documentation/component-architecture-overall.png)
 
-## components
+## Components
 
 these are the reusable functional react components.
 
-## lib
+## Lib
 
 these are the server side code which are imported into the pages/api folder.
 
-## public
+## Public
 
 all the static files are located here.
 
-## store
+## Store
 
 here are the context api files.
 
-## styles
+## Styles
 
 all the scss files are located here.
 
@@ -62,7 +62,7 @@ all the advanced configuration is located here.
 
 documentation foe the application.
 
-## detailed look inside the folders
+## Detailed Look Inside The Folders
 
 ![detail component architecture](documentation/detail-comp-arch.png)
 
